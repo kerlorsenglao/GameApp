@@ -6,7 +6,7 @@ import Input from './Input';
 import Number from './Number';
 import colors from '../constants/colors';
 
-const StartGame =()=>{
+const StartGame =props=>{
 
     const [enterValue,setEnterValue] = useState('');
     const [comfirmed,setComfirmed] = useState(false);
@@ -16,7 +16,7 @@ const StartGame =()=>{
         comfirmOutPut = <Card style={styles.summaryContainer}>
              <Text>Your Number Is</Text>
              <Number>{selectNumber}</Number>
-             <Button title='START GAME'/>
+             <Button title='START GAME' onPress={()=>props.onStartGame(selectNumber)}/>
         </Card>
     }
 
